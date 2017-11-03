@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZeneSearch | A Query Engine to Rule Them All</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Oswald|Yellowtail" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/query.css"></style>
+</head>
+<body>
+<!--This contains everything and is useful for CSS editing later-->
+	<div class="row text-center" id="header-one">
+	    <h1>ZeneSearch: A Random Query Engine to Rule Them All</h1>
+	    <h2>Begin your arbitrary location search today!</n></h2>
+	    <hr>
+	</div>
+
+  <div id="gmap_canvas"></div>
+  <div class="actions">
+      <div class="button">
+          <label for="gmap_where">Where:</label>
+          <input id="gmap_where" type="text" name="gmap_where" /></div>
+      <div id="button2" class="button" onclick="findAddress(); return false;">Search for address</div>
+      <div class="button">
+          <label for="gmap_keyword">Keyword (optional):</label>
+          <input id="gmap_keyword" type="text" name="gmap_keyword" /></div>
+      <div class="button">
+          <label for="gmap_type">Type:</label>
+          <select id="gmap_type">
+              <option value="art_gallery">art_gallery</option>
+              <option value="atm">atm</option>
+              <option value="bank">bank</option>
+              <option value="bar">bar</option>
+              <option value="cafe">cafe</option>
+              <option value="food">food</option>
+              <option value="hospital">hospital</option>
+              <option value="police">police</option>
+              <option value="store">store</option>
+          </select>
+      </div>
+      <div class="button">
+          <label for="gmap_radius">Radius:</label>
+          <select id="gmap_radius">
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+              <option value="1500">1500</option>
+              <option value="5000">5000</option>
+          </select>
+      </div>
+      <input type="hidden" id="lat" name="lat" value="40.7143528" />
+      <input type="hidden" id="lng" name="lng" value="-74.0059731" />
+      <div id="button1" class="button" onclick="findPlaces(); return false;">Search for objects</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+	<script type="text/javascript" src="javascript/query.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEqiSu63n6-F2BKTTuF_CnvsTpyUsYiNM&callback=initMap" async defer></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6HaYOWnev18Ig94-OIR5dDz98VCl100A&libraries=places"></script>
+
+</body>
+</html>
